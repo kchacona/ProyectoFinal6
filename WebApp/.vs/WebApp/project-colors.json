@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "644fe76c-63c1-47b1-956d-d5f47860f22d": {
+      "ProjectGuid": "644fe76c-63c1-47b1-956d-d5f47860f22d",
+      "DisplayName": "BD",
+      "ColorIndex": 0
+    },
+    "af1e5ede-041d-4d5e-9cbd-24e78a10ef59": {
+      "ProjectGuid": "af1e5ede-041d-4d5e-9cbd-24e78a10ef59",
+      "DisplayName": "Entity",
+      "ColorIndex": 1
+    },
+    "57edcce9-85fa-4148-8344-ba849c7bee62": {
+      "ProjectGuid": "57edcce9-85fa-4148-8344-ba849c7bee62",
+      "DisplayName": "WBL",
+      "ColorIndex": 2
+    },
+    "d360784f-df98-42d2-9efa-5e960d9189f2": {
+      "ProjectGuid": "d360784f-df98-42d2-9efa-5e960d9189f2",
+      "DisplayName": "WebApp",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

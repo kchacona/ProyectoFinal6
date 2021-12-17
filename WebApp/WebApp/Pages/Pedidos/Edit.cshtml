@@ -1,0 +1,97 @@
+﻿@page
+@model WebApp.Pages.Pedidos.EditModel
+@{ }
+
+
+<div id="AppEdit" class="container">
+    <div class="card">
+        <div class="card-header">
+            @(Model.id.HasValue ? "Actualizar" : "Nuevo")
+        </div>
+        <div class="card-body">
+            <form id="FormEdit" method="post">
+                <input type="hidden" asp-for="Entity.Codigo" />
+                <div class="form-group mb-3">
+                    <label for="Entity.Cliente" class="form-label">Cliente</label>
+                    <input type="number" class="form-control" asp-for="Entity.Cliente" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Entity.FechaPedido" class="form-label">Fecha de Pedido</label>
+                    <input type="date" class="form-control" asp-for="Entity.FechaPedido" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Entity.Producto" class="form-label">Producto</label>
+                    <input type="number" class="form-control" asp-for="Entity.Producto" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Entity.Cantidad" class="form-label">Cantidad</label>
+                    <input type="number" class="form-control" asp-for="Entity.Cantidad" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Entity.Subtotal" class="form-label">Subtotal</label>
+                    <input type="number" class="form-control" asp-for="Entity.Subtotal" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Entity.Envio" class="form-label">Envio</label>
+                    <input type="text" class="form-control" asp-for="Entity.Envio" maxlength="250" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Entity.Impuestos" class="form-label">Impuestos</label>
+                    <input type="number" class="form-control" asp-for="Entity.Impuestos" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Entity.Total" class="form-label">Total</label>
+                    <input type="number" class="form-control" asp-for="Entity.Total" required>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-outline-primary">
+                            @(Model.id.HasValue?"Actualizar":"Agregar")
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+
+
+        </div>
+    </div>
+
+</div>
+
+@section Scripts{
+<script>
+    $(document).ready(function () {
+        $('#FormEdit').bootstrapValidator({
+            // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                Descripcion: {
+                    message: 'Descripcion no valida',
+                    validators: {
+                        notEmpty: {
+                            message: 'Descripcion no puede ir vacio'
+                        },
+                        stringLength: {
+                            min: 6,
+                            max: 30,
+                            message: 'La Descripcion debe ser de 6 a 30 caracteres'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9]+$/,
+                            message: 'La Descripcion solo puede contener letras o numeros'
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
+    <script defer src="~/App/Pedidos/Edit.js"></script>
+
+}

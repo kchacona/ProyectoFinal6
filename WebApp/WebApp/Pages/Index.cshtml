@@ -1,0 +1,46 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Inicio de Sesión";
+}
+
+<div id="" class="container">
+    <div class="form-group mb-3">
+        <label for="Usuario" class="form-label">Usuario</label>
+        <input type="text" id="txtuser" class="form-control" maxlength="250" required>
+    </div>
+    <div class="form-group mb-3">
+        <label for="Usuario" class="form-label">Contraseña</label>
+        <input type="password" id="txtpass" class="form-control" maxlength="250" required>
+    </div>
+    <button onclick="mostrar()" class="btn btn-outline-primary">
+        Inicio de Sesión
+    </button>
+</div>
+
+<script>
+    function mostrar()
+    {
+        var user = document.getElementById("txtuser").value
+        var pass = document.getElementById("txtpass").value
+        if(user == "Admin" && pass =="Final6")
+        {
+            Swal.fire({
+            title: 'Inicio Existoso',
+            text: 'Usuario Aceptado',
+            icon: 'info',
+            confirmButtonText: 'Cool'
+            })
+
+        }
+        else
+        {
+            Swal.fire({
+            title: 'Inicio Fallado',
+            text: 'Pruebe con Admin y Contraseña Final6',
+            icon: 'info',
+            confirmButtonText: 'Cool'
+            })
+        }
+    }
+</script>
